@@ -1,0 +1,24 @@
+scoreboard:
+  enabled: true
+  title: "&dLogic&5Suite"
+  lines:
+    - "&7&m------------------------"
+    - "&d&lPlayer Info"
+    - "&7&lRank: &f%vault_rank%"
+    - "&7&lBalance: &f%vault_eco_balance_formatted%"
+    - "&7&m------------------------"
+    - "&d&lServer Info"
+    - "&7&lPlayers: &f%server_online%"
+    - "&7&lTPS: &f%server_tps%"
+    - "&7&lTime: &f%localtime_time%"
+    - "&7&m------------------------"
+tabList:
+  enabled: true
+  header:
+    - "&7&m------------------------"
+    - "&d&lWelcome to LogicSuite"
+    - "&7&m------------------------"
+  footer:
+    - "&7&m------------------------"
+    - "&d&lWebsite: &flogic.codearray.dev"
+    - "&7&m------------------------"

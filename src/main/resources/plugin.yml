@@ -1,0 +1,45 @@
+name: LogicSuite
+version: '0.0.1'
+main: de.frinshhd.logicsuite.Main
+api-version: '1.20'
+authors:
+  - FrinshHD
+
+permissions:
+  logicsuite.night:
+    default: op
+  logicsuite.day:
+    default: op
+  logicsuite.gamemode:
+    default: op
+  logicsuite.teleport:
+    default: op
+
+commands:
+  night:
+    description: "Set the time to night"
+    usage: "/night"
+  day:
+    description: "Set the time to day"
+    usage: "/day"
+  gamemode:
+    description: "Change the gamemode"
+    usage: "/gamemode <gamemode>"
+    aliases:
+      - gm
+  teleport:
+    description: "Teleport to a player"
+    usage: "/teleport <player>"
+    aliases:
+      - tp
+  chat:
+    description: "Toggle the chat"
+    usage: "/chat"
+  weather:
+    description: "Change the weather"
+    usage: "/weather <weather>"
+  logicsuite:
+    description: "Main command for LogicSuite"
+    usage: "/logicsuite"
+    aliases:
+      - ls
