@@ -13,7 +13,7 @@ import java.util.List;
 
 public class WeatherCommand extends SpigotCommandExecutor {
     public WeatherCommand() {
-        super("chat");
+        super("weather");
     }
 
     @Override
