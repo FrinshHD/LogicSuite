@@ -1,5 +1,6 @@
 package de.frinshhd.logicsuite.modules.day;
 
+import de.frinshhd.logicsuite.Main;
 import de.frinshhd.logicsuite.modules.BaseModule;
 
 public class DayModule extends BaseModule {
@@ -9,6 +10,6 @@ public class DayModule extends BaseModule {
 
     @Override
     public boolean isEnabled() {
-        return false;
+        return Main.getConfigManager().getConfig().day.enabled;
     }
 }

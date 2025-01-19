@@ -1,5 +1,6 @@
 package de.frinshhd.logicsuite.modules.weather;
 
+import de.frinshhd.logicsuite.Main;
 import de.frinshhd.logicsuite.modules.BaseModule;
 import de.frinshhd.logicsuite.utils.Translator;
 import io.papermc.paper.event.player.AsyncChatEvent;
@@ -19,7 +20,7 @@ public class WeatherModule extends BaseModule implements Listener {
 
     @Override
     public boolean isEnabled() {
-        return true;
+        return Main.getConfigManager().getConfig().weather.enabled;
     }
 
     public void setWeatherLocked(boolean weatherLocked) {

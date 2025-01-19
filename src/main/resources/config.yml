@@ -22,3 +22,15 @@ tabList:
     - "&7&m------------------------"
     - "&d&lWebsite: &flogic.codearray.dev"
     - "&7&m------------------------"
+chat:
+  enabled: false
+day:
+  enabled: false
+night:
+  enabled: false
+gamemode:
+  enabled: false
+teleport:
+  enabled: false
+weather:
+  enabled: false

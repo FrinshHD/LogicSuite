@@ -1,9 +1,7 @@
 package de.frinshhd.logicsuite.modules.main;
 
 import de.frinshhd.logicsuite.Main;
-import de.frinshhd.logicsuite.utils.DynamicModules;
-import de.frinshhd.logicsuite.utils.SpigotCommandExecutor;
-import de.frinshhd.logicsuite.utils.Translator;
+import de.frinshhd.logicsuite.utils.*;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 import org.jetbrains.annotations.NotNull;
@@ -15,10 +13,14 @@ import java.util.List;
 public class MainCommand extends SpigotCommandExecutor {
     public MainCommand() {
         super("logicsuite");
+        setDescription("Main command for LogicSuite");
+        setUsage("/logicsuite <reload>");
+        setPermission("logicsuite.main");
+        setAliases(List.of("ls"));
     }
 
     @Override
-    public boolean onCommand(CommandSender sender, Command command, String s, String[] args) {
+    public boolean execute(@NotNull CommandSender sender, @NotNull String s, @NotNull String[] args) {
         if (!sender.hasPermission("logicsuite.main")) {
             sender.sendMessage(Translator.build("noPermission"));
             return true;
@@ -37,6 +39,7 @@ public class MainCommand extends SpigotCommandExecutor {
                 }
 
                 Main.getConfigManager().reloadConfig();
+                DynamicCommands.reload();
                 sender.sendMessage(Translator.build("main.reloaded"));
                 return true;
             }
@@ -49,7 +52,7 @@ public class MainCommand extends SpigotCommandExecutor {
     }
 
     @Override
-    public @Nullable List<String> onTabComplete(@NotNull CommandSender sender, @NotNull Command command, @NotNull String label, @NotNull String[] args) {
+    public @NotNull List<String> tabComplete(@NotNull CommandSender sender, @NotNull String alias, @NotNull String[] args) throws IllegalArgumentException {
         ArrayList<String> completions = new ArrayList<>();
         ArrayList<String> possibleCompletions = new ArrayList<>();
 
@@ -66,5 +69,10 @@ public class MainCommand extends SpigotCommandExecutor {
         }
 
         return completions;
+    }
+
+    @Override
+    public boolean isEnabled() {
+        return true;
     }
 }

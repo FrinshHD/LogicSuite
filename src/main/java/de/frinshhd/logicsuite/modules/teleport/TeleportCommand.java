@@ -1,5 +1,6 @@
 package de.frinshhd.logicsuite.modules.teleport;
 
+import de.frinshhd.logicsuite.Main;
 import de.frinshhd.logicsuite.utils.SpigotCommandExecutor;
 import de.frinshhd.logicsuite.utils.Translator;
 import de.frinshhd.logicsuite.utils.TranslatorPlaceholder;
@@ -16,10 +17,14 @@ import java.util.List;
 public class TeleportCommand extends SpigotCommandExecutor {
     public TeleportCommand() {
         super("teleport");
+        setDescription("Teleport to a player");
+        setUsage("/teleport <player>");
+        setPermission("logicsuite.teleport");
+        setAliases(List.of("tp"));
     }
 
     @Override
-    public boolean onCommand(CommandSender sender, Command command, String s, String[] args) {
+    public boolean execute(@NotNull CommandSender sender, @NotNull String s, @NotNull String[] args) {
         if (!(sender  instanceof Player player)) {
             sender.sendMessage(Translator.build("playerOnly"));
             return true;
@@ -53,7 +58,7 @@ public class TeleportCommand extends SpigotCommandExecutor {
     }
 
     @Override
-    public @Nullable List<String> onTabComplete(@NotNull CommandSender sender, @NotNull Command command, @NotNull String label, @NotNull String[] args) {
+    public @NotNull List<String> tabComplete(@NotNull CommandSender sender, @NotNull String alias, @NotNull String[] args) throws IllegalArgumentException {
         ArrayList<String> completions = new ArrayList<>();
         ArrayList<String> possibleCompletions = new ArrayList<>();
 
@@ -74,5 +79,10 @@ public class TeleportCommand extends SpigotCommandExecutor {
         }
 
         return completions;
+    }
+
+    @Override
+    public boolean isEnabled() {
+        return Main.getConfigManager().getConfig().teleport.enabled;
     }
 }

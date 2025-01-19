@@ -9,28 +9,15 @@ import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
 
-public class SpigotCommandExecutor implements CommandExecutor, TabCompleter {
-    private String commandName = null;
+public abstract class SpigotCommandExecutor extends Command {
+    public SpigotCommandExecutor(String name, String permission) {
+        super(name);
+        this.setPermission(permission);
+    }
 
     public SpigotCommandExecutor(String commandName) {
-        setCommandName(commandName);
+        super(commandName);
     }
 
-    public String getCommandName() {
-        return commandName;
-    }
-
-    public void setCommandName(String commandName) {
-        this.commandName = commandName;
-    }
-
-    @Override
-    public boolean onCommand(CommandSender sender, Command command, String s, String[] args) {
-        return false;
-    }
-
-    @Override
-    public @Nullable List<String> onTabComplete(@NotNull CommandSender sender, @NotNull Command command, @NotNull String label, @NotNull String[] args) {
-        return List.of();
-    }
+    public abstract boolean isEnabled();
 }

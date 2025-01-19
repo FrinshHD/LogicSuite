@@ -1,5 +1,6 @@
 package de.frinshhd.logicsuite.modules.teleport;
 
+import de.frinshhd.logicsuite.Main;
 import de.frinshhd.logicsuite.modules.BaseModule;
 
 public class TeleportModule extends BaseModule {
@@ -9,6 +10,6 @@ public class TeleportModule extends BaseModule {
 
     @Override
     public boolean isEnabled() {
-        return true;
+        return Main.getConfigManager().getConfig().teleport.enabled;
     }
 }

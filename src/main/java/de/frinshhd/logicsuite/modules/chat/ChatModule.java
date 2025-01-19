@@ -1,5 +1,6 @@
 package de.frinshhd.logicsuite.modules.chat;
 
+import de.frinshhd.logicsuite.Main;
 import de.frinshhd.logicsuite.modules.BaseModule;
 import de.frinshhd.logicsuite.utils.Translator;
 import io.papermc.paper.event.player.AsyncChatEvent;
@@ -18,7 +19,7 @@ public class ChatModule extends BaseModule implements Listener {
 
     @Override
     public boolean isEnabled() {
-        return true;
+        return Main.getConfigManager().getConfig().chat.enabled;
     }
 
     @EventHandler

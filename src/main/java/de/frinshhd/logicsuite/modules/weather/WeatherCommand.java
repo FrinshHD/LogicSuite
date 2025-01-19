@@ -1,5 +1,6 @@
 package de.frinshhd.logicsuite.modules.weather;
 
+import de.frinshhd.logicsuite.Main;
 import de.frinshhd.logicsuite.utils.DynamicModules;
 import de.frinshhd.logicsuite.utils.SpigotCommandExecutor;
 import de.frinshhd.logicsuite.utils.Translator;
@@ -14,10 +15,13 @@ import java.util.List;
 public class WeatherCommand extends SpigotCommandExecutor {
     public WeatherCommand() {
         super("weather");
+        setDescription("Change the weather");
+        setUsage("/weather <freeze|unfreeze|clear|rain|thunder>");
+        setPermission("logicsuite.weather");
     }
 
     @Override
-    public boolean onCommand(CommandSender sender, Command command, String s, String[] args) {
+    public boolean execute(@NotNull CommandSender sender, @NotNull String s, @NotNull String[] args) {
         if (!sender.hasPermission("logicsuite.weather")) {
             sender.sendMessage(Translator.build("noPermission"));
             return true;
@@ -91,7 +95,7 @@ public class WeatherCommand extends SpigotCommandExecutor {
     }
 
     @Override
-    public @Nullable List<String> onTabComplete(@NotNull CommandSender sender, @NotNull Command command, @NotNull String label, @NotNull String[] args) {
+    public @NotNull List<String> tabComplete(@NotNull CommandSender sender, @NotNull String alias, @NotNull String[] args) throws IllegalArgumentException {
         ArrayList<String> completions = new ArrayList<>();
         ArrayList<String> possibleCompletions = new ArrayList<>();
 
@@ -116,5 +120,10 @@ public class WeatherCommand extends SpigotCommandExecutor {
         }
 
         return completions;
+    }
+
+    @Override
+    public boolean isEnabled() {
+        return Main.getConfigManager().getConfig().weather.enabled;
     }
 }

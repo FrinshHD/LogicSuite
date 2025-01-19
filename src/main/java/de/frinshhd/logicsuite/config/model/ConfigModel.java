@@ -9,4 +9,22 @@ public class ConfigModel {
 
     @JsonProperty
     public TabListModel tabList = new TabListModel();
+
+    @JsonProperty
+    public BaseModuleModel chat = new BaseModuleModel();
+
+    @JsonProperty
+    public BaseModuleModel day = new BaseModuleModel();
+
+    @JsonProperty
+    public BaseModuleModel night = new BaseModuleModel();
+
+    @JsonProperty
+    public BaseModuleModel weather = new BaseModuleModel();
+
+    @JsonProperty
+    public BaseModuleModel teleport = new BaseModuleModel();
+
+    @JsonProperty
+    public BaseModuleModel gamemode = new BaseModuleModel();
 }

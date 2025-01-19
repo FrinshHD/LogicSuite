@@ -1,5 +1,6 @@
 package de.frinshhd.logicsuite.modules.chat;
 
+import de.frinshhd.logicsuite.Main;
 import de.frinshhd.logicsuite.utils.DynamicModules;
 import de.frinshhd.logicsuite.utils.SpigotCommandExecutor;
 import de.frinshhd.logicsuite.utils.Translator;
@@ -17,10 +18,13 @@ import java.util.List;
 public class ChatCommand extends SpigotCommandExecutor {
     public ChatCommand() {
         super("chat");
+        setDescription("Toggle the chat lock, unlock or clear the chat.");
+        setUsage("/chat <lock|unlock|clear>");
+        setPermission("logicsuite.chat");
     }
 
     @Override
-    public boolean onCommand(CommandSender sender, Command command, String s, String[] args) {
+    public boolean execute(@NotNull CommandSender sender, @NotNull String s, @NotNull String[] args) {
         if (!sender.hasPermission("logicsuite.chat")) {
             sender.sendMessage(Translator.build("noPermission"));
             return true;
@@ -74,7 +78,7 @@ public class ChatCommand extends SpigotCommandExecutor {
     }
 
     @Override
-    public @Nullable List<String> onTabComplete(@NotNull CommandSender sender, @NotNull Command command, @NotNull String label, @NotNull String[] args) {
+    public @NotNull List<String> tabComplete(@NotNull CommandSender sender, @NotNull String alias, @NotNull String[] args) throws IllegalArgumentException {
         ArrayList<String> completions = new ArrayList<>();
         ArrayList<String> possibleCompletions = new ArrayList<>();
 
@@ -99,5 +103,10 @@ public class ChatCommand extends SpigotCommandExecutor {
         }
 
         return completions;
+    }
+
+    @Override
+    public boolean isEnabled() {
+        return Main.getConfigManager().getConfig().chat.enabled;
     }
 }
