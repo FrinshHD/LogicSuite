@@ -2,18 +2,12 @@ package de.frinshhd.logicsuite.modules;
 
 import de.frinshhd.logicsuite.Main;
 import de.frinshhd.logicsuite.utils.MessageFormat;
-import de.frinshhd.logicsuite.utils.PlayerHashMap;
-import fr.mrmicky.fastboard.FastBoard;
 import me.clip.placeholderapi.PlaceholderAPI;
 import net.kyori.adventure.text.Component;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 import org.bukkit.scheduler.BukkitRunnable;
 import org.bukkit.scheduler.BukkitTask;
-
-import java.util.ArrayList;
-import java.util.Random;
-import java.util.UUID;
 
 public class TabListModule extends BaseModule {
 

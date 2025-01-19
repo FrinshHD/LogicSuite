@@ -1,6 +1,5 @@
 package de.frinshhd.logicsuite.modules;
 
-import de.frinshhd.logicsuite.config.model.TabListModel;
 import de.frinshhd.logicsuite.utils.DynamicModules;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;

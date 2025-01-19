@@ -1,8 +1,10 @@
 package de.frinshhd.logicsuite;
 
 import de.frinshhd.logicsuite.config.ConfigManager;
-import de.frinshhd.logicsuite.utils.*;
-import org.bukkit.Bukkit;
+import de.frinshhd.logicsuite.utils.DynamicCommands;
+import de.frinshhd.logicsuite.utils.DynamicListeners;
+import de.frinshhd.logicsuite.utils.DynamicModules;
+import de.frinshhd.logicsuite.utils.Translator;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.reflections.Reflections;
 import org.reflections.scanners.SubTypesScanner;
@@ -13,7 +15,6 @@ import java.io.InputStream;
 import java.nio.file.Files;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Objects;
 import java.util.Set;
 import java.util.logging.Level;
 

@@ -3,7 +3,6 @@ package de.frinshhd.logicsuite.modules.night;
 import de.frinshhd.logicsuite.Main;
 import de.frinshhd.logicsuite.utils.SpigotCommandExecutor;
 import de.frinshhd.logicsuite.utils.Translator;
-import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.jetbrains.annotations.NotNull;

@@ -3,8 +3,6 @@ package de.frinshhd.logicsuite.config;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.dataformat.yaml.YAMLFactory;
 import de.frinshhd.logicsuite.config.model.ConfigModel;
-import de.frinshhd.logicsuite.modules.ScoreboardModule;
-import de.frinshhd.logicsuite.utils.DynamicModules;
 
 import java.io.FileInputStream;
 import java.io.IOException;

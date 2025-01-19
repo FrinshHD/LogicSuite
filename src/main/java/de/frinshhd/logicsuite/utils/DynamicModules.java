@@ -2,7 +2,6 @@ package de.frinshhd.logicsuite.utils;
 
 import de.frinshhd.logicsuite.Main;
 import de.frinshhd.logicsuite.modules.BaseModule;
-import org.bukkit.event.Listener;
 
 import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;

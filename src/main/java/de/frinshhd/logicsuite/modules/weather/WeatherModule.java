@@ -2,10 +2,7 @@ package de.frinshhd.logicsuite.modules.weather;
 
 import de.frinshhd.logicsuite.Main;
 import de.frinshhd.logicsuite.modules.BaseModule;
-import de.frinshhd.logicsuite.utils.Translator;
-import io.papermc.paper.event.player.AsyncChatEvent;
 import org.bukkit.Bukkit;
-import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.weather.WeatherChangeEvent;
